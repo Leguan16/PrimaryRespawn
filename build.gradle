@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'at.noahb'
-version = '1.0-SNAPSHOT'
+version = '0.1.0'
 
 repositories {
     mavenLocal()
@@ -60,6 +60,8 @@ shadowJar {
     }
 
     relocate("dev.jorel.commandapi", "at.noahb.commandapi")
+
+    archiveFileName = "PrimaryRespawn-${version}.jar"
 }
 
 tasks {
