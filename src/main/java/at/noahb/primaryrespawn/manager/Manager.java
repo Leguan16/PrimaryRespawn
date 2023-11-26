@@ -8,7 +8,7 @@ import java.util.Optional;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 
-public interface Manager extends Queueble {
+public interface Manager extends queueable {
 
     Optional<PlayerSpawns> loadDataForPlayer(UUID uniqueId);
     boolean addLocation(UUID uniqueId, Location location, boolean isPrimary);
@@ -20,15 +20,11 @@ public interface Manager extends Queueble {
     boolean hasSecondaryLocation(UUID uniqueId);
     PlayerSpawns getSpawnsForPlayer(UUID uniqueId);
     Optional<LocationType> getLocationType(UUID uniqueId, Location location);
-
     void setSecondaryAsPrimary(PlayerSpawns playerSpawns);
     void setSecondaryAsPrimary(UUID uuid);
-
     void resetRespawns(UUID uniqueId);
-
     CompletableFuture<List<PlayerSpawns>> getPlayersAtLocation(Location location);
     void saveDataForPlayer(PlayerSpawns playerSpawns);
-
     void saveConfig();
 
     enum LocationType {

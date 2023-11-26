@@ -4,3 +4,10 @@ main: at.noahb.primaryrespawn.PrimaryRespawn
 api-version: '1.20'
 author: 'MCmitNoah'
 load: POSTWORLD
+permissions:
+  primaryrespawn.show:
+    description: Show the primary respawn location
+    default: op
+  primaryrespawn.reset:
+    description: Reset the primary respawn location
+    default: op

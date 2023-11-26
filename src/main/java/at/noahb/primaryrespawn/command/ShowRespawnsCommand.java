@@ -20,7 +20,7 @@ public class ShowRespawnsCommand implements Command {
     @Override
     public void init() {
         command = new CommandAPICommand("showrespawns")
-                .withPermission("resetrespawn.show")
+                .withPermission("primaryrespawn.show")
                 .withAliases("sr")
                 .executesPlayer(this::execute);
         command.register();
@@ -28,10 +28,9 @@ public class ShowRespawnsCommand implements Command {
 
     @Override
     public void execute(CommandSender sender, CommandArguments args) {
-        Player player = (Player) sender;
-        PlayerSpawns playerSpawns = manager.getSpawnsForPlayer(player.getUniqueId());
-        player.sendRichMessage("<green>Primary respawn: <gold>" + playerSpawns.getPrimary());
-        player.sendRichMessage("<green>Secondary respawn: <gold>" + playerSpawns.getSecondary());
+        PlayerSpawns playerSpawns = manager.getSpawnsForPlayer(((Player) sender).getUniqueId());
+        sender.sendRichMessage("<green>Primary respawn: <gold>" + playerSpawns.getPrimary());
+        sender.sendRichMessage("<green>Secondary respawn: <gold>" + playerSpawns.getSecondary());
         sender.sendRichMessage("<red>Only players can use this command!");
     }
 }

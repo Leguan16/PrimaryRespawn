@@ -48,7 +48,7 @@ public class PlayerSpawns {
         if (player.isOnline() && player.getPlayer() != null) {
             player.getPlayer().sendMessage(message);
         } else {
-
+            // TODO: 26/11/2023 save message to be sent when player logs in
         }
     }
 }

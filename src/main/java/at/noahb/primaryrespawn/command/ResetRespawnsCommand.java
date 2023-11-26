@@ -22,7 +22,7 @@ public class ResetRespawnsCommand implements Command {
     @Override
     public void init() {
         command = new CommandAPICommand("resetrespawns")
-                .withPermission("resetrespawn.reset")
+                .withPermission("primaryrespawn.reset")
                 .withAliases("rr")
                 .withArguments(
                         new PlayerArgument("player"))
