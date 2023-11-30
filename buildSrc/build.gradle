@@ -1,0 +1,11 @@
+plugins {
+    id 'java'
+}
+
+group = 'at.noahb'
+
+dependencies {
+    implementation gradleApi()
+}
+
+
